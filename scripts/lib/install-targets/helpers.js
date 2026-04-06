@@ -32,6 +32,9 @@ function isForeignPlatformPath(sourceRelativePath, adapterTarget) {
 
 function resolveBaseRoot(scope, input = {}) {
   if (scope === 'home') {
+    if (process.env.CLAUDE_CONFIG_DIR) {
+      return path.resolve(process.env.CLAUDE_CONFIG_DIR, '..');
+    }
     return input.homeDir || os.homedir();
   }
 

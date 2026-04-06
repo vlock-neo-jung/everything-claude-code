@@ -36,6 +36,9 @@ function getHomeDir() {
  * Get the Claude config directory
  */
 function getClaudeDir() {
+  if (process.env.CLAUDE_CONFIG_DIR) {
+    return path.resolve(process.env.CLAUDE_CONFIG_DIR);
+  }
   return path.join(getHomeDir(), '.claude');
 }
 

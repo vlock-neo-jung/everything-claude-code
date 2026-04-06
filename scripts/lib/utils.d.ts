@@ -15,7 +15,7 @@ export const isLinux: boolean;
 /** Get the user's home directory (cross-platform) */
 export function getHomeDir(): string;
 
-/** Get the Claude config directory (~/.claude) */
+/** Get the Claude config directory (CLAUDE_CONFIG_DIR or ~/.claude) */
 export function getClaudeDir(): string;
 
 /** Get the canonical ECC sessions directory (~/.claude/session-data) */
